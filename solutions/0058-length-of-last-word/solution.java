@@ -1,20 +1,19 @@
 class Solution {
-    public int lengthOfLastWord(String s) 
-    {
-        int a = s.length()-1;
-        int count = 0;
-    //ignoring white spaces
-       while(a>=0 && s.charAt(a) ==' ')
-       {
-        a--;
-       }
-       //counting lastword
-       while(a>=0 && s.charAt(a)!=' ')
-        
+    public int lengthOfLastWord(String s)
+     {
+        int i = s.length()-1;
+
+        while(i>=0 && s.charAt(i)==' ')
         {
-            count++;
-            a--;
+            i--;
+        }
+        int count =0;
+        while(i>=0 && s.charAt(i)!=' ')
+        {
+           count++;
+           i--;
         }
         return count;
+        
     }
 }
