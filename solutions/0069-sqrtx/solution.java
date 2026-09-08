@@ -1,27 +1,26 @@
 class Solution {
     public int mySqrt(int x) {
-        if(x==0 || x==1)
+        if(x<2)
         {
             return x;
         }
-        int low =0;
-        int high = x;
-        int ans = 0;
+
+        int low = 1;
+        int high = x/2;
+        int ans =0;
+
         while(low<=high)
         {
-            int mid = low + (high - low)/2;
-            long square = (long) mid * mid;
-            if (x == square ){
-                return mid;
-            }
-            if(square<x)
+            int mid = low+(high-low)/2;
+
+            if(mid<=x/mid)
             {
-                 ans = mid;//temporary
+                ans = mid;
                 low = mid+1;
             }
             else
             {
-                high = mid -1;
+              high = mid-1;
             }
         }
         return ans;
